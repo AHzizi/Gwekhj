@@ -171,7 +171,7 @@ export const Articles = ({ posts, featured }) => {
     <article className={styles.articles}>
       <Meta
         title="Articles"
-        description="A collection of technical design and development articles. May contain incoherent ramblings."
+        description="Lorem ipsum  dolor sit amet."
       />
       <Section className={styles.content}>
         {!isSingleColumn && (
