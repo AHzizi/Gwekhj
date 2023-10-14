@@ -27,10 +27,11 @@ export const Home = () => {
   const projectOne = useRef();
   const projectTwo = useRef();
   const projectThree = useRef();
+  const projectFour = useRef();
   const details = useRef();
 
   useEffect(() => {
-    const sections = [intro, projectOne, projectTwo, projectThree, details];
+    const sections = [intro, projectOne, projectTwo, projectThree, projectFour, details];
 
     const sectionObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -77,6 +78,9 @@ export const Home = () => {
         disciplines={disciplines}
         scrollIndicatorHidden={scrollIndicatorHidden}
       />
+
+      {/* KONTEN KARYA  */}
+
       <ProjectSummary
         id="project-1"
         sectionRef={projectOne}
@@ -138,6 +142,31 @@ export const Home = () => {
             {
               srcSet: [sliceTexture, sliceTextureLarge],
               placeholder: sliceTexturePlaceholder,
+            },
+          ],
+        }}
+      />
+      <ProjectSummary
+        id="project-4"
+        alternate
+        sectionRef={projectFour}
+        visible={visibleSections.includes(projectFour.current)}
+        index={4}
+        title="test"
+        description="test"
+        buttonText="View website"
+        buttonLink="#"
+        model={{
+          type: 'phone',
+          alt: 'App login screen',
+          textures: [
+            {
+              srcSet: [gamestackTexture, gamestackTextureLarge],
+              placeholder: gamestackTexturePlaceholder,
+            },
+            {
+              srcSet: [gamestackTexture2, gamestackTexture2Large],
+              placeholder: gamestackTexture2Placeholder,
             },
           ],
         }}
