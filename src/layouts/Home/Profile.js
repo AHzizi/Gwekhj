@@ -21,11 +21,11 @@ const ProfileText = ({ visible, titleId }) => (
       <DecoderText text="Hi there👋" start={visible} delay={500} />
     </Heading>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-    Hello, I'm Azizi, I currently live in Central Java, Indonesia, working in an Educational Institution, to be exact at{' '}
+    Hello, I&apos;m Azizi, I currently live in Central Java, Indonesia, working in an Educational Institution, to be exact at{' '}
       <Link href="http://mtsnu20kangkung.sch.id/">MTs NU 20 Kangkung</Link>. I am 20 years old, my hobbies are reading, listening to music, exercising and watching Anime.
     </Text>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-    In my spare time I always increase my knowledge about programming. If you want to be friends with me don't hesitate to contact me.
+    In my spare time I always increase my knowledge about programming. If you want to be friends with me don&apos;t hesitate to contact me.
     </Text>
   </Fragment>
 );
