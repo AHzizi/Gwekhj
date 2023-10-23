@@ -90,16 +90,16 @@ export const Home = () => {
         description="Sebuah Aplikasi Untuk Mempermudah Dalam Mengelolah Keuangan Koperasi"
         buttonText="Lihat Project"
         buttonLink="https://github.com/AHzizi/Apklikasi-Koperasi-Simpan-Pinjam-Excel"
-        model={{
-          type: 'laptop',
-          alt: 'Smart Sparrow lesson builder',
-          textures: [
-            {
-              srcSet: [sprTexture, sprTextureLarge],
-              placeholder: sprTexturePlaceholder,
-            },
-          ],
-        }}
+        // model={{
+        //   type: 'laptop',
+        //   alt: 'Smart Sparrow lesson builder',
+        //   textures: [
+        //     {
+        //       srcSet: [sprTexture, sprTextureLarge],
+        //       placeholder: sprTexturePlaceholder,
+        //     },
+        //   ],
+        // }}
       />
       <ProjectSummary
         id="project-2"
@@ -111,20 +111,20 @@ export const Home = () => {
         description="UI Design For Supercell ID App"
         buttonText="View website"
         buttonLink="#"
-        model={{
-          type: 'phone',
-          alt: 'App login screen',
-          textures: [
-            {
-              srcSet: [gamestackTexture, gamestackTextureLarge],
-              placeholder: gamestackTexturePlaceholder,
-            },
-            {
-              srcSet: [gamestackTexture2, gamestackTexture2Large],
-              placeholder: gamestackTexture2Placeholder,
-            },
-          ],
-        }}
+        // model={{
+        //   type: 'phone',
+        //   alt: 'App login screen',
+        //   textures: [
+        //     {
+        //       srcSet: [gamestackTexture, gamestackTextureLarge],
+        //       placeholder: gamestackTexturePlaceholder,
+        //     },
+        //     {
+        //       srcSet: [gamestackTexture2, gamestackTexture2Large],
+        //       placeholder: gamestackTexture2Placeholder,
+        //     },
+        //   ],
+        // }}
       />
       <ProjectSummary
         id="project-3"
@@ -135,16 +135,16 @@ export const Home = () => {
         description="Simple, Easy To Use"
         buttonText="View project"
         buttonLink="https://github.com/AHzizi/PeriodicTableMsExcel"
-        model={{
-          type: 'laptop',
-          alt: 'Annotating a biomedical image in the Slice app',
-          textures: [
-            {
-              srcSet: [sliceTexture, sliceTextureLarge],
-              placeholder: sliceTexturePlaceholder,
-            },
-          ],
-        }}
+        // model={{
+        //   type: 'laptop',
+        //   alt: 'Annotating a biomedical image in the Slice app',
+        //   textures: [
+        //     {
+        //       srcSet: [sliceTexture, sliceTextureLarge],
+        //       placeholder: sliceTexturePlaceholder,
+        //     },
+        //   ],
+        // }}
       />
       <ProjectSummary
         id="project-4"
@@ -156,20 +156,20 @@ export const Home = () => {
         description="A Simple Music Player"
         buttonText="View Project"
         buttonLink="https://my-react-music-app.vercel.app"
-        model={{
-          type: 'phone',
-          alt: 'App login screen',
-          textures: [
-            {
-              srcSet: [gamestackTexture, gamestackTextureLarge],
-              placeholder: gamestackTexturePlaceholder,
-            },
-            {
-              srcSet: [gamestackTexture2, gamestackTexture2Large],
-              placeholder: gamestackTexture2Placeholder,
-            },
-          ],
-        }}
+        // model={{
+        //   type: 'phone',
+        //   alt: 'App login screen',
+        //   textures: [
+        //     {
+        //       srcSet: [gamestackTexture, gamestackTextureLarge],
+        //       placeholder: gamestackTexturePlaceholder,
+        //     },
+        //     {
+        //       srcSet: [gamestackTexture2, gamestackTexture2Large],
+        //       placeholder: gamestackTexture2Placeholder,
+        //     },
+        //   ],
+        // }}
       />
       <Profile
         sectionRef={details}
