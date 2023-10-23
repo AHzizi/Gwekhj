@@ -30,7 +30,7 @@ export const socialLinks = [
   },
   {
     label: 'Github',
-    url: 'https://github.com/Intan-Safitri',
+    url: 'https://github.com/AHzizi',
     icon: 'github',
   },
 ];

@@ -152,10 +152,10 @@ export const Home = () => {
         sectionRef={projectFour}
         visible={visibleSections.includes(projectFour.current)}
         index={4}
-        title="test"
-        description="test"
-        buttonText="View website"
-        buttonLink="#"
+        title="React Music App"
+        description="A Simple Music Player"
+        buttonText="View Project"
+        buttonLink="https://my-react-music-app.vercel.app"
         model={{
           type: 'phone',
           alt: 'App login screen',
