@@ -2,7 +2,6 @@ import projectKatakana from 'assets/katakana-project.svg?url';
 import { Button } from 'components/Button';
 import { Divider } from 'components/Divider';
 import { Heading } from 'components/Heading';
-import { deviceModels } from 'components/Model/deviceModels';
 import { Section } from 'components/Section';
 import { Text } from 'components/Text';
 import { useTheme } from 'components/ThemeProvider';
@@ -12,8 +11,6 @@ import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import { cssProps, media } from 'utils/style';
 import styles from './ProjectSummary.module.css';
-
-const Model = dynamic(() => import('components/Model').then(mod => mod.Model));
 
 export const ProjectSummary = ({
   id,
@@ -35,8 +32,6 @@ export const ProjectSummary = ({
   const isMobile = width <= media.tablet;
   const svgOpacity = theme.themeId === 'light' ? 0.7 : 1;
   const indexText = index < 10 ? `0${index}` : index;
-  const phoneSizes = `(max-width: ${media.tablet}px) 30vw, 20vw`;
-  const laptopSizes = `(max-width: ${media.tablet}px) 80vw, 40vw`;
 
   const renderKatakana = (device, visible) => (
     <svg
@@ -87,63 +82,7 @@ export const ProjectSummary = ({
     </div>
   );
 
-  const renderPreview = visible => (
-    <div className={styles.preview}>
-      {/* {model.type === 'laptop' && (
-        <>
-          {renderKatakana('laptop', visible)}
-          <div className={styles.model} data-device="laptop">
-            <Model
-              alt={model.alt}
-              cameraPosition={{ x: 0, y: 0, z: 8 }}
-              showDelay={700}
-              show={visible}
-              models={[
-                {
-                  ...deviceModels.laptop,
-                  texture: {
-                    ...model.textures[0],
-                    sizes: laptopSizes,
-                  },
-                },
-              ]}
-            />
-          </div>
-        </>
-      )}
-      {model.type === 'phone' && (
-        <>
-          {renderKatakana('phone', visible)}
-          <div className={styles.model} data-device="phone">
-            <Model
-              alt={model.alt}
-              cameraPosition={{ x: 0, y: 0, z: 11.5 }}
-              showDelay={300}
-              show={visible}
-              models={[
-                {
-                  ...deviceModels.phone,
-                  position: { x: -0.6, y: 1.1, z: 0 },
-                  texture: {
-                    ...model.textures[0],
-                    sizes: phoneSizes,
-                  },
-                },
-                {
-                  ...deviceModels.phone,
-                  position: { x: 0.6, y: -0.5, z: 0.3 },
-                  texture: {
-                    ...model.textures[1],
-                    sizes: phoneSizes,
-                  },
-                },
-              ]}
-            />
-          </div>
-        </>
-      )} */}
-    </div>
-  );
+  const renderPreview = visible => <div className={styles.preview}></div>;
 
   return (
     <Section

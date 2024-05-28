@@ -15,7 +15,7 @@ export async function generateOgImage(props) {
   const ogImageDir = path.join(process.cwd(), `public/og`);
   const imageName = `${hash}.png`;
   const imagePath = `${ogImageDir}/${imageName}`;
-  const publicPath = `https://azizii.my.id/og/${imageName}`;
+  const publicPath = `https://azizii.my.id/${imageName}`;
 
   try {
     fs.statSync(imagePath);
