@@ -20,18 +20,17 @@ export async function generateOgImage(props) {
     fs.statSync(imagePath);
     return publicPath;
   } catch (error) {
-    // file does not exists, so we create it
+    // file does not exist, so we create it
   }
 
   let browser = null;
   try {
     browser = await chromium.puppeteer.launch({
-      args: [...chromium.args, '--no-sandbox', '--disable-setuid-sandbox'],
+      args: chromium.args,
       defaultViewport: chromium.defaultViewport,
       executablePath: await chromium.executablePath,
       headless: chromium.headless,
     });
-
     const page = await browser.newPage();
     await page.setViewport({ width: 1200, height: 630 });
     await page.goto(url, { waitUntil: 'networkidle0' });
@@ -40,6 +39,7 @@ export async function generateOgImage(props) {
     fs.writeFileSync(imagePath, buffer);
   } catch (error) {
     console.error('Error generating OG image:', error);
+    throw error;
   } finally {
     if (browser !== null) {
       await browser.close();
