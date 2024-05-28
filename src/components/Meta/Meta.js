@@ -35,3 +35,5 @@ export const Meta = ({ title, description, prefix = name, ogImage = defaultOgIma
     </Head>
   );
 };
+
+const a = 0;
