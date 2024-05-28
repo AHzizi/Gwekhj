@@ -2,6 +2,7 @@ const chromium = require('chrome-aws-lambda');
 const path = require('path');
 const fs = require('fs');
 const { createHash } = require('crypto');
+const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox'] });
 
 export async function generateOgImage(props) {
   const params = new URLSearchParams(props);
