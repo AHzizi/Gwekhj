@@ -1,8 +1,8 @@
 const chromium = require('chrome-aws-lambda');
+const puppeteer = require('puppeteer'); // Import puppeteer
 const path = require('path');
 const fs = require('fs');
 const { createHash } = require('crypto');
-const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox'] });
 
 export async function generateOgImage(props) {
   const params = new URLSearchParams(props);
@@ -26,11 +26,9 @@ export async function generateOgImage(props) {
 
   let browser = null;
   try {
-    browser = await chromium.puppeteer.launch({
-      args: chromium.args,
-      defaultViewport: chromium.defaultViewport,
-      executablePath: await chromium.executablePath,
-      headless: chromium.headless,
+    browser = await puppeteer.launch({
+      headless: true,
+      args: ['--no-sandbox'],
     });
     const page = await browser.newPage();
     await page.setViewport({ width: 1200, height: 630 });
