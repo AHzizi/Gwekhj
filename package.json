@@ -35,10 +35,12 @@
     "stylelint-config-standard": "^25.0.0"
   },
   "dependencies": {
+    "chrome-aws-lambda": "^10.1.0",
     "fathom-client": "^3.4.1",
     "framer-motion": "^6.3.3",
     "mdx-bundler": "^9.0.0",
     "next": "^12.1.6",
+    "puppeteer-core": "^22.10.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "three": "^0.140.0",

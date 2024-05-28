@@ -1,4 +1,4 @@
-const puppeteer = require('puppeteer');
+const chromium = require('chrome-aws-lambda');
 const path = require('path');
 const fs = require('fs');
 const { createHash } = require('crypto');
@@ -23,17 +23,28 @@ export async function generateOgImage(props) {
     // file does not exists, so we create it
   }
 
+  let browser = null;
+  try {
+    browser = await chromium.puppeteer.launch({
+      args: [...chromium.args, '--no-sandbox', '--disable-setuid-sandbox'],
+      defaultViewport: chromium.defaultViewport,
+      executablePath: await chromium.executablePath,
+      headless: chromium.headless,
+    });
 
-  const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox'] });
-  // const browser = await puppeteer.launch({ headless: true });
-  const page = await browser.newPage();
-  await page.setViewport({ width: 1200, height: 630 });
-  await page.goto(url, { waitUntil: 'networkidle0' });
-  const buffer = await page.screenshot();
-  await browser.close();
-
-  fs.mkdirSync(ogImageDir, { recursive: true });
-  fs.writeFileSync(imagePath, buffer);
+    const page = await browser.newPage();
+    await page.setViewport({ width: 1200, height: 630 });
+    await page.goto(url, { waitUntil: 'networkidle0' });
+    const buffer = await page.screenshot();
+    fs.mkdirSync(ogImageDir, { recursive: true });
+    fs.writeFileSync(imagePath, buffer);
+  } catch (error) {
+    console.error('Error generating OG image:', error);
+  } finally {
+    if (browser !== null) {
+      await browser.close();
+    }
+  }
 
   return publicPath;
 }
