@@ -3,6 +3,5 @@
     "env": {
       "PUPPETEER_SKIP_CHROMIUM_DOWNLOAD": "true"
     }
-  },
-  "install": ["apt-get update && apt-get install -y libnss3"]
+  }
 }
