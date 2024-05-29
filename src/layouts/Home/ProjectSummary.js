@@ -7,7 +7,7 @@ import { Text } from 'components/Text';
 import { useTheme } from 'components/ThemeProvider';
 import { Transition } from 'components/Transition';
 import { useWindowSize } from 'hooks';
-import dynamic from 'next/dynamic';
+
 import { useState } from 'react';
 import { cssProps, media } from 'utils/style';
 import styles from './ProjectSummary.module.css';
@@ -19,7 +19,6 @@ export const ProjectSummary = ({
   index,
   title,
   description,
-  model,
   buttonText,
   buttonLink,
   alternate,
@@ -32,22 +31,6 @@ export const ProjectSummary = ({
   const isMobile = width <= media.tablet;
   const svgOpacity = theme.themeId === 'light' ? 0.7 : 1;
   const indexText = index < 10 ? `0${index}` : index;
-
-  const renderKatakana = (device, visible) => (
-    <svg
-      aria-hidden="true"
-      width="750"
-      height="137"
-      viewBox="0 0 750 137"
-      data-visible={visible}
-      data-light={theme.themeId === 'light'}
-      style={cssProps({ opacity: svgOpacity })}
-      className={styles.svg}
-      data-device={device}
-    >
-      <use href={`${projectKatakana}#katakana-project`} />
-    </svg>
-  );
 
   const renderDetails = visible => (
     <div className={styles.details}>

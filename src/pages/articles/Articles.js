@@ -13,7 +13,6 @@ import { useWindowSize } from 'hooks';
 import RouterLink from 'next/link';
 import { useState } from 'react';
 import { formatDate } from 'utils/date';
-import { loadImageFromSrcSet } from 'utils/image';
 import { classes, cssProps } from 'utils/style';
 import styles from './Articles.module.css';
 
@@ -169,10 +168,7 @@ export const Articles = ({ posts, featured }) => {
 
   return (
     <article className={styles.articles}>
-      <Meta
-        title="Articles"
-        description="Lorem ipsum  dolor sit amet."
-      />
+      <Meta title="Articles" description="Lorem ipsum  dolor sit amet." />
       <Section className={styles.content}>
         {!isSingleColumn && (
           <div className={styles.grid}>
@@ -192,4 +188,3 @@ export const Articles = ({ posts, featured }) => {
     </article>
   );
 };
-
