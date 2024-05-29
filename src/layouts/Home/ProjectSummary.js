@@ -1,4 +1,3 @@
-import projectKatakana from 'assets/katakana-project.svg?url';
 import { Button } from 'components/Button';
 import { Divider } from 'components/Divider';
 import { Heading } from 'components/Heading';
@@ -9,7 +8,6 @@ import { Transition } from 'components/Transition';
 import { useWindowSize } from 'hooks';
 
 import { useState } from 'react';
-import { cssProps, media } from 'utils/style';
 import styles from './ProjectSummary.module.css';
 
 export const ProjectSummary = ({
@@ -29,7 +27,7 @@ export const ProjectSummary = ({
   const { width } = useWindowSize();
   const titleId = `${id}-title`;
   const isMobile = width <= media.tablet;
-  const svgOpacity = theme.themeId === 'light' ? 0.7 : 1;
+  const svgOpacity = theme.themeId === 'light' ? 0.7 : 1; // Make sure to use `svgOpacity` somewhere if needed
   const indexText = index < 10 ? `0${index}` : index;
 
   const renderDetails = visible => (
