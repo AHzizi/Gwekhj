@@ -48,7 +48,8 @@
   },
   "scripts": {
     "dev": "next dev",
-    "postinstall": "apt-get update && apt-get install -y libnss3",
+     "postinstall": "echo 'Skipping apt-get update and install as it is not supported in Vercel.'",
+    //"postinstall": "apt-get update && apt-get install -y libnss3",
     "build": "next build && next export -o build/",
     "deploy:functions": "cd functions && npm run deploy",
     "start": "next start",
