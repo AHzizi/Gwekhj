@@ -155,7 +155,7 @@ export const Home = () => {
         title="React Music App"
         description="A Simple Music Player"
         buttonText="View Project"
-        buttonLink="https://my-react-music-app.vercel.app"
+        buttonLink="https://our-musicfav.vercel.app"
         // model={{
         //   type: 'phone',
         //   alt: 'App login screen',
